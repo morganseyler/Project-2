@@ -72,4 +72,9 @@ public class PosAvg {
     	
     	numStations++;
     }
+    
+    public String toString()
+    {
+    	return "This index is average of ";
+    }
 }
