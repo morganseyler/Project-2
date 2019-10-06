@@ -10,7 +10,7 @@ public class Driver
 	{
 		
 		String stID = "OKCE";
-		//MesoInherit mesoInherit = new MesoInherit(new MesoStation(stID));
+		MesoInherit mesoInherit = new MesoInherit(new MesoStation(stID));
 		
 		PosAvg posAvg = new PosAvg(stID);
 		posAvg.indexOfStation();

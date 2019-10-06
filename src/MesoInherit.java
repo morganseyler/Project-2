@@ -1,6 +1,11 @@
 
 public class MesoInherit extends MesoAbstract{
 
+	public MesoInherit(String stId)
+	{
+		
+	}
+	
 	@Override
 	int[] calAverage() {
 		

@@ -75,7 +75,7 @@ public class PosAvg {
     
     public String toString()
     {
-    	return "This index is average of " + nameArray[stIdIndex+1] + " and " + nameArray[stIdIndex-1] + ", " +
-    			nameArray[stIdIndex+2] + " and " + nameArray[stIdIndex-2];
+    	return "This index is average of " + nameArray[stIdIndex-1] + " and " + nameArray[stIdIndex+1] + ", " +
+    			nameArray[stIdIndex-2] + " and " + nameArray[stIdIndex+2];
     }
 }
