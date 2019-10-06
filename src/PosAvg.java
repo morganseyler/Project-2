@@ -8,6 +8,7 @@ public class PosAvg {
 	private int numStations = 0;
 	private int capacity = 2;
 	private String[] nameArray = new String[capacity];
+	private int stIdIndex = -1;
 
 	public PosAvg(String stId)
 	{
@@ -19,7 +20,6 @@ public class PosAvg {
 	{
     	String filename = "Mesonet.txt";
 		BufferedReader br = new BufferedReader(new FileReader(filename));
-		int index = -1;
 		int indexCounter = 0;
 		int count = 0;
     	String lineOfData = br.readLine();	
@@ -34,7 +34,7 @@ public class PosAvg {
 				addElement(name);
 				if(stId.equals(name))
 				{
-					index = indexCounter;
+					stIdIndex = indexCounter;
 				}
     			indexCounter++;
     		}
@@ -44,7 +44,7 @@ public class PosAvg {
     	}
 		
 		br.close();
-		return index;
+		return stIdIndex;
 	}
 	
     private void expandArray()
@@ -75,6 +75,7 @@ public class PosAvg {
     
     public String toString()
     {
-    	return "This index is average of ";
+    	return "This index is average of " + nameArray[stIdIndex+1] + " and " + nameArray[stIdIndex-1] + ", " +
+    			nameArray[stIdIndex+2] + " and " + nameArray[stIdIndex-2];
     }
 }
