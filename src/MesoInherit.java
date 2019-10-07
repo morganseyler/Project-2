@@ -23,6 +23,10 @@ public class MesoInherit extends MesoAbstract{
 		stationArray[0] = new Double(Math.ceil(average)).intValue();
 		stationArray[1] = new Double(Math.floor(average)).intValue();
 		
+		if()
+		{
+			
+		}
 		return null;
 	}
 
