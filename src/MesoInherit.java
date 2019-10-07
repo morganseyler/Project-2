@@ -39,8 +39,9 @@ public class MesoInherit extends MesoAbstract{
 	public char letterAverage() {
 		int asciiValue = stationArray[2];
 		char letterAverage = ((char) asciiValue);
-		System.out.println(letterAverage);
-		return 0;
+		
+		
+		return letterAverage;
 	}
 
 }

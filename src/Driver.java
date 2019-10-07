@@ -22,11 +22,11 @@ public class Driver
 		System.out.println("Ascii Floor is " + mesoInherit.calAverage()[1]);
 		System.out.println("Ascii Average is " + mesoInherit.calAverage()[2]);
 		System.out.print("\n");
-		mesoInherit.letterAverage();
-		/*
+
+		
 		System.out.println("Letter Avg: " + mesoInherit.letterAverage());
 		System.out.print("\n");
-		
+		/*
 		LetterAvg letterAvg = new LetterAvg(mesoInherit.letterAverage());
 		System.out.println("Total number of stations starting with letter '" + mesoInherit.letterAverage() + "' is " + letterAvg.numberOfStationWithLetterAvg() + ".");
 		*/
