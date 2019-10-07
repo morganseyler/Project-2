@@ -21,8 +21,8 @@ public class MesoInherit extends MesoAbstract{
 		}
 		Double average = sum/4;
 		stationArray[0] = new Double(Math.ceil(average)).intValue();
-		System.out.println(stationArray[0]);
-		System.out.println(Math.floor(average));
+		stationArray[1] = new Double(Math.floor(average)).intValue();
+		
 		return null;
 	}
 
