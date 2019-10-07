@@ -10,7 +10,7 @@ public class MesoInherit extends MesoAbstract{
 
 	@Override
 	int[] calAverage() {
-		int[] stationArray = new int[2];
+		int[] stationArray = new int[3];
 		Double sum = 0.0;
 		for (int i = 0; i < mesoStation.getStID().length(); i++)
 		{
@@ -22,12 +22,16 @@ public class MesoInherit extends MesoAbstract{
 		Double average = sum/4;
 		stationArray[0] = new Double(Math.ceil(average)).intValue();
 		stationArray[1] = new Double(Math.floor(average)).intValue();
-		
-		if()
+		stationArray[2] = new Double(Math.round(average)).intValue();
+		if(Math.round(average) >= average)
 		{
-			
+			stationArray[2] = new Double(Math.ceil(average)).intValue();
 		}
-		return null;
+		else
+		{
+			stationArray[2] = new Double(Math.floor(average)).intValue();
+		}
+		return stationArray;
 	}
 
 	@Override
