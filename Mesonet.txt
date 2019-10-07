@@ -1,6 +1,6 @@
   101 ! (c) 2019 Oklahoma Climatological Survey and the Oklahoma Mesonet - all rights reserved
   21 2019 01 28 00 00 00
- STID  STNM  TIME   RELH   TAIR   WSPD   WVEC  WDIR   WDSD   WSSD   WMAX    RAIN     PRES  SRAD   TA9M   WS2M   TS10   TB10   TS05   TS25   TS60    TR05    TR25    TR60
+ S5TID  STNM  TIME   RELH   TAIR   WSPD   WVEC  WDIR   WDSD   WSSD   WMAX    RAIN     PRES  SRAD   TA9M   WS2M   TS10   TB10   TS05   TS25   TS60    TR05    TR25    TR60
  ACME   110     0   -996   -996   -996   -996  -996   -996   -996   -996    -996     -996  -996   -996   -996   -999   -999   -999   -999   -999    -999    -999    -999
  ADAX     1     0     39   10.5    1.9    1.9   213    5.2    0.2    2.3    0.00   978.90     2   12.7    0.3    7.8    9.1    8.5    7.0   -998    1.52    1.51    -998
  ALTU     2     0     34   11.9    4.4    4.4   174    2.9    0.2    4.8    0.00   964.18     5   13.3    2.4    7.3    8.1    8.2    6.3   -998    2.14    1.58    -998

@@ -28,6 +28,7 @@ public class Driver
 		System.out.print("\n");
 		
 		LetterAvg letterAvg = new LetterAvg(mesoInherit.letterAverage());
+		letterAvg.setNameArray(posAvg.getNameArray());
 		System.out.println("Total number of stations starting with letter '" + mesoInherit.letterAverage() + "' is " + letterAvg.numberOfStationWithLetterAvg() + ".");
 		
 		//System.out.print(letterAvg);

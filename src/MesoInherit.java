@@ -40,7 +40,6 @@ public class MesoInherit extends MesoAbstract{
 		int asciiValue = stationArray[2];
 		char letterAverage = ((char) asciiValue);
 		
-		
 		return letterAverage;
 	}
 
