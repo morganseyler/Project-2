@@ -22,6 +22,7 @@ public class Driver
 		System.out.println("Ascii Floor is " + mesoInherit.calAverage()[1]);
 		System.out.println("Ascii Average is " + mesoInherit.calAverage()[2]);
 		System.out.print("\n");
+		mesoInherit.letterAverage();
 		/*
 		System.out.println("Letter Avg: " + mesoInherit.letterAverage());
 		System.out.print("\n");

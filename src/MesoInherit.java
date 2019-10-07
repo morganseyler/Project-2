@@ -2,6 +2,7 @@
 public class MesoInherit extends MesoAbstract{
 
 	MesoStation mesoStation;
+	private int[] stationArray = new int[3];
 	
 	public MesoInherit(MesoStation mesoStation)
 	{
@@ -9,8 +10,8 @@ public class MesoInherit extends MesoAbstract{
 	}
 
 	@Override
-	int[] calAverage() {
-		int[] stationArray = new int[3];
+	int[] calAverage() 
+	{
 		Double sum = 0.0;
 		for (int i = 0; i < mesoStation.getStID().length(); i++)
 		{
@@ -36,8 +37,9 @@ public class MesoInherit extends MesoAbstract{
 
 	@Override
 	public char letterAverage() {
-		
-
+		int asciiValue = stationArray[2];
+		char letterAverage = ((char) asciiValue);
+		System.out.println(letterAverage);
 		return 0;
 	}
 
