@@ -8,6 +8,14 @@ public class PosAvg {
 	private int numStations = 0;
 	private int capacity = 2;
 	private String[] nameArray = new String[capacity];
+	public String[] getNameArray() {
+		return nameArray;
+	}
+
+	public void setNameArray(String[] nameArray) {
+		this.nameArray = nameArray;
+	}
+
 	private int stIdIndex = -1;
 
 	public PosAvg(String stId)
@@ -46,8 +54,8 @@ public class PosAvg {
 		br.close();
 		return stIdIndex;
 	}
-	
-    private void expandArray()
+
+	private void expandArray()
     {
     	capacity = capacity*2;
     	String[] tempArray = new String[capacity];
