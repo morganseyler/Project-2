@@ -21,16 +21,16 @@ public class MesoInherit extends MesoAbstract{
 			
 		}
 		Double average = sum/4;
-		stationArray[0] = new Double(Math.ceil(average)).intValue();
-		stationArray[1] = new Double(Math.floor(average)).intValue();
-		stationArray[2] = new Double(Math.round(average)).intValue();
+		stationArray[0] = (int) (Math.ceil(average));
+		stationArray[1] = (int) (Math.floor(average));
+		stationArray[2] = (int) (Math.round(average));
 		if(Math.round(average) >= average)
 		{
-			stationArray[2] = new Double(Math.ceil(average)).intValue();
+			stationArray[2] = (int) (Math.ceil(average));
 		}
 		else
 		{
-			stationArray[2] = new Double(Math.floor(average)).intValue();
+			stationArray[2] = (int) (Math.floor(average));
 		}
 		return stationArray;
 	}
