@@ -18,15 +18,27 @@ public class LetterAvg {
 	public String numberOfStationWithLetterAvg() {
 		
 		int countSimilar = 0;
-		
-		for(int i = 0; i < nameArray.length; i++)
+		String currentPos = null;
+
+		for(int i = 65; i < nameArray.length; i++)
 		{
-			if(nameArray[i].substring(0) == ("I"))
+			
+			currentPos = nameArray[i].substring(0,1);
+			if(currentPos.equals("I"))
 			{
 				countSimilar++;
 			}
 		}
 		return Integer.toString(countSimilar);
+		
+		/*
+		for(int i = 0; i < nameArray.length; i++)
+		{
+			currentPos = nameArray[i];
+			countSimilar++;
+		}
+		return currentPos;
+		*/
 	}
 	
 	
