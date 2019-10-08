@@ -1,5 +1,5 @@
 
-public class LetterAvg {
+public class LetterAvg{
 
 	private String[] nameArray = null;
 
@@ -16,19 +16,23 @@ public class LetterAvg {
 	}
 
 	public String numberOfStationWithLetterAvg() {
-		
+		MesoInherit letter = new MesoInherit(null);
 		int countSimilar = 0;
 		String currentPos = null;
 
-		for(int i = 65; i < nameArray.length; i++)
+		for(int i = 0; i < nameArray.length; i++)
 		{
-			
-			currentPos = nameArray[i].substring(0,1);
-			if(currentPos.equals("I"))
+			//equals(nameArray[i].substring(0,1)
+			if(letter.letterAverage() == nameArray[i].charAt(1))
 			{
 				countSimilar++;
+				if(letter.letterAverage() != nameArray[i].charAt(1))
+						{
+							i = nameArray.length;
+						}
 			}
 		}
+
 		return Integer.toString(countSimilar);
 		
 		/*
