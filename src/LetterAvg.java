@@ -1,5 +1,13 @@
 
 public class LetterAvg{
+	private MesoInherit mesoInherit = null;
+	public MesoInherit getMesoInherit() {
+		return mesoInherit;
+	}
+
+	public void setMesoInherit(MesoInherit mesoInherit) {
+		this.mesoInherit = mesoInherit;
+	}
 
 	private String[] nameArray = null;
 
@@ -15,25 +23,31 @@ public class LetterAvg{
 		this.nameArray = nameArray;
 	}
 
-	public String numberOfStationWithLetterAvg() {
-		MesoInherit letter = new MesoInherit(null);
+	public int numberOfStationWithLetterAvg() {
+		//int asciiValue = nameArray[2];
+		char ltr = mesoInherit.letterAverage();
 		int countSimilar = 0;
 		String currentPos = null;
-
 		for(int i = 0; i < nameArray.length; i++)
 		{
-			//equals(nameArray[i].substring(0,1)
-			if(letter.letterAverage() == nameArray[i].charAt(1))
+			
+			String name = nameArray[i];
+			if(name == null)
 			{
-				countSimilar++;
-				if(letter.letterAverage() != nameArray[i].charAt(1))
-						{
-							i = nameArray.length;
-						}
+				break;
 			}
+	
+				if(name.charAt(0) == ltr)
+				{
+	
+					countSimilar++;
+					
+				}
+			
+			
 		}
 
-		return Integer.toString(countSimilar);
+		return countSimilar;
 		
 		/*
 		for(int i = 0; i < nameArray.length; i++)
@@ -43,6 +57,12 @@ public class LetterAvg{
 		}
 		return currentPos;
 		*/
+
+	}
+	
+	public String toString()
+	{
+		return "\nThey are:\n";
 	}
 	
 	

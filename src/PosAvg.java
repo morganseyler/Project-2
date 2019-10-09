@@ -42,6 +42,7 @@ public class PosAvg {
 				addElement(name);
 				if(stId.equals(name))
 				{
+					indexCounter++;
 					stIdIndex = indexCounter;
 				}
     			indexCounter++;
@@ -83,6 +84,7 @@ public class PosAvg {
     
     public String toString()
     {
+    	stIdIndex--;
     	return "This index is average of " + nameArray[stIdIndex-1] + " and " + nameArray[stIdIndex+1] + ", " +
     			nameArray[stIdIndex-2] + " and " + nameArray[stIdIndex+2] + ", and so on.";
     }
