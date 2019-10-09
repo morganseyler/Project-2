@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -7,7 +8,7 @@ public class PosAvg {
 	public String stId;
 	private int numStations = 0;
 	private int capacity = 2;
-	private String[] nameArray = new String[capacity];
+	private String[] nameArray = null;
 	public String[] getNameArray() {
 		return nameArray;
 	}
@@ -16,7 +17,7 @@ public class PosAvg {
 		this.nameArray = nameArray;
 	}
 
-	private int stIdIndex = -1;
+	private int stIdIndex = 0;
 
 	public PosAvg(String stId)
 	{
@@ -26,7 +27,19 @@ public class PosAvg {
 	
 	public int indexOfStation() throws IOException
 	{
-    	String filename = "Mesonet.txt";
+    	loadData();
+		return stIdIndex;
+	}
+
+	private void loadData() throws FileNotFoundException, IOException {
+		
+		if(nameArray != null)
+		{
+			return;
+		}
+		
+		nameArray = new String[capacity];
+		String filename = "Mesonet.txt";
 		BufferedReader br = new BufferedReader(new FileReader(filename));
 		int indexCounter = 0;
 		int count = 0;
@@ -53,7 +66,6 @@ public class PosAvg {
     	}
 		
 		br.close();
-		return stIdIndex;
 	}
 
 	private void expandArray()
@@ -85,6 +97,11 @@ public class PosAvg {
     public String toString()
     {
     	stIdIndex--;
+    	if(nameArray==null)
+    	{
+    		return "";
+    	}
+    	
     	return "This index is average of " + nameArray[stIdIndex-1] + " and " + nameArray[stIdIndex+1] + ", " +
     			nameArray[stIdIndex-2] + " and " + nameArray[stIdIndex+2] + ", and so on.";
     }
