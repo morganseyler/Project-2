@@ -23,11 +23,20 @@ public class PosAvg {
 	{
 		MesoStation meso = new MesoStation(stId);
 		this.stId = meso.getStID();
+		try {
+			loadData();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
-	public int indexOfStation() throws IOException
+	public int indexOfStation()
 	{
-    	loadData();
+    	
 		return stIdIndex;
 	}
 
@@ -96,10 +105,10 @@ public class PosAvg {
     
     public String toString()
     {
-    	stIdIndex--;
+    	int stIdIndex = indexOfStation()-1;
     	if(nameArray==null)
     	{
-    		return "";
+    		return "This index is average of ";
     	}
     	
     	return "This index is average of " + nameArray[stIdIndex-1] + " and " + nameArray[stIdIndex+1] + ", " +

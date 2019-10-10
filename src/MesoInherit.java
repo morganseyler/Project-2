@@ -37,8 +37,7 @@ public class MesoInherit extends MesoAbstract{
 
 	@Override
 	public char letterAverage() {
-		int asciiValue = stationArray[2];
-		char letterAverage = ((char) asciiValue);
+		char letterAverage = ((char) calAverage()[2]);
 		
 		return letterAverage;
 	}

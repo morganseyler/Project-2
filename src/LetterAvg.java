@@ -2,124 +2,92 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-
-public class LetterAvg{
+import java.util.ArrayList;
+public class LetterAvg {
 
 	private String[] letterNameArray = null;
 	private int countSimilar = 0;
 	private int capacity = 2;
 	private int numStations = 0;
 	private char letterAverage;
+	private ArrayList<String> stationId = new ArrayList<String>();
 
 	private String[] nameArray = null;
 
-	
-	public LetterAvg(char letterAverage) {
+	public LetterAvg(char letterAverage) throws FileNotFoundException, IOException {
 		this.letterAverage = letterAverage;
-		
+		loadData();
+
 	}
 
 	private void loadData() throws FileNotFoundException, IOException {
-		
-		if(nameArray != null)
-		{
+
+		if (nameArray != null) {
 			return;
 		}
-		
 		nameArray = new String[capacity];
 		String filename = "Mesonet.txt";
 		BufferedReader br = new BufferedReader(new FileReader(filename));
-		int count = 0;
-    	String lineOfData = br.readLine();	
 
-		while (lineOfData!=null)
-    	{
-    		count++;
-    		if(count > 3)
-    		{
-    			String name = lineOfData.substring(1, 5);
-				//System.out.println(name);
-				addElement(name);
-    		}
+		String lineOfData = br.readLine();
+		lineOfData = br.readLine();
+		lineOfData = br.readLine();
+		lineOfData = br.readLine();
+		
+		while (lineOfData != null) {
+
+			lineOfData = lineOfData.trim();
+			String lineToAdd = lineOfData.substring(0, 4);
+
+			stationId.add(lineToAdd);
 
 			// Get the next line of the file
 			lineOfData = br.readLine();
-    	}
-		
+		}
+
 		br.close();
 	}
-	private void expandArray()
-    {
-    	capacity = capacity*2;
-    	String[] tempArray = new String[capacity];
-    	
-    		for (int i = 0; i < numStations; i++)
-    		{
-    			tempArray[i] = nameArray[i];
-    		}
-    		nameArray = tempArray;
-    		
-    }
-	
-    public void addElement(String name)
-    {
-    	
-    	if (numStations == capacity)
-    	{
-    		expandArray();
-    	}
-    	
-    	nameArray[numStations] = name;
-    	
-    	numStations++;
-    }
 
-	public int numberOfStationWithLetterAvg() throws FileNotFoundException, IOException {
+	public int numberOfStationWithLetterAvg() {
 
-		loadLetterData();
+		int num = loadLetterData();
 
+		return num;
+	}
+
+	public int loadLetterData(){
+		char ltr = letterAverage;
+		for (int i = 0; i < stationId.size(); i++) {
+
+			if (stationId.get(i).charAt(0) == ltr) {
+				countSimilar++;
+			}
+		}
 		return countSimilar;
 	}
 
-	private void loadLetterData() throws FileNotFoundException, IOException {
-		loadData();
-		if(letterNameArray != null)
-		{
-			return;
-		}
-		
-		letterNameArray = new String[20];
+	public ArrayList<String> loadLetterData1() {
+		ArrayList<String> temp = new ArrayList<String>();
 		char ltr = letterAverage;
-		
-		for(int i = 0; i < nameArray.length; i++)
-		{
-			
-			String name = nameArray[i];
-			if(name == null)
-			{
-				break;
+
+		for (int i = 0; i < stationId.size(); i++) {
+			if (stationId.get(i).charAt(0) == ltr) {
+				temp.add(stationId.get(i));
 			}
-				if(name.charAt(0) == ltr)
-				{
-					letterNameArray[countSimilar] = name;
-					countSimilar++;
-				}
 		}
+		return temp;
 	}
-	
-	public String toString()
-	{
-		StringBuffer buff = new StringBuffer();
-		for(int i = 0; i < letterNameArray.length; i++)
-		{
-			if(letterNameArray[i] == null)
-			{
-				break;
-			}
-			buff.append("\n").append(letterNameArray[i]);
+
+	public String toString() {
+
+		ArrayList<String> temp = loadLetterData1();
+		String myToString = "\nThey are:";
+
+		for (int i = 0; i < temp.size(); i++) {
+			myToString += "\n" + temp.get(i);
+
 		}
-		return "\nThey are:" + buff.toString();
+		return myToString;
 	}
-	
-	
+
 }
