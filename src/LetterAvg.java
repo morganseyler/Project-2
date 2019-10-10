@@ -5,10 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 public class LetterAvg {
 
-	private String[] letterNameArray = null;
 	private int countSimilar = 0;
 	private int capacity = 2;
-	private int numStations = 0;
 	private char letterAverage;
 	private ArrayList<String> stationId = new ArrayList<String>();
 
