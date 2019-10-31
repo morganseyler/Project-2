@@ -1,7 +1,7 @@
 # Project-2
 Project 2 implemented abstraction through methods/classes and also performs ASCII conversions.
 ## Problem Solving Approach
-To start the project I first added all of the methods in MesoInherit that extend the MesoAbstract class.
+To start the project I first added all of the methods in MesoInherit that extend the MesoAbstract class. I then individually worked on each class by creating each class to output or complete the specified task. At the beginning of the project I started off with using arrays then as the project progressed I changed to ArrayList for an easier use of insertion and list expansion.
 # LetterAvg Class
 public class LetterAvg 
 ### Imports and Variables
